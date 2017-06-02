@@ -9,9 +9,16 @@ import de.hsbochum.fbg.kswe.scrum.artifacts.ProductBacklog;
  */
 public class SprintRetrospective implements Event {
 
+    private final int POSITION = 4;
+    
     @Override
     public Class<? extends Event> followingEventType() {
         return SprintPlanning.class;
+    }
+    
+  
+    public int getPOSITION(){
+        return POSITION;
     }
 
     @Override

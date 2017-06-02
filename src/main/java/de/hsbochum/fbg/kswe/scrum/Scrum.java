@@ -37,6 +37,16 @@ public class Scrum {
             this.currentEvent = event;
         }
         else {
+            
+            if(currentEvent.getPOSITION()+1 == event.getPOSITION() ||
+                    currentEvent.getPOSITION()==4 && event.getPOSITION() == 1) {
+                previousEvent = currentEvent;
+                currentEvent = event;
+            }else{
+                throw new UnexpectedNextEventException("Die Reihenfolge ist falsch");
+            }
+            
+            
             /*
              * TODO implement the assertion of the logical order. Throw an
              * UnexpectedNextEventException if the order is not correct.

@@ -12,6 +12,8 @@ public class Sprint implements Event {
 
     private final SprintBacklog backlog;
     private final int numberOfDays;
+    
+    private final int POSITION = 2;
 
     public Sprint(int numberOfDays) {
         this.numberOfDays = numberOfDays;
@@ -26,10 +28,15 @@ public class Sprint implements Event {
     public int getNumberOfDays() {
         return numberOfDays;
     }
+        
+    public int getPOSITION(){
+        return POSITION;
+    }
 
     @Override
     public Class<? extends Event> followingEventType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return SprintReview.class;
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
